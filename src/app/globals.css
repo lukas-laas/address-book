@@ -8,6 +8,19 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+h1 {
+  font-size: xx-large;
+}
+h2 {
+  font-size: x-large;
+}
+h3 {
+  font-size: larger;
+}
+h4 {
+  font-size: large;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -17,6 +30,7 @@
 }
 
 body {
+  font-size: medium;
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

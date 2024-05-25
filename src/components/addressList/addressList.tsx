@@ -1,11 +1,19 @@
+import addresses from "../../../public/addresses.json"
+
 export default function header() {
   return (
     <div>
-      <h2>This is the addresses:</h2>
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {addresses.addresses.map((x) => {
+          return (
+            <li key={x.id} className="border m-1 p-1">
+              <p>
+                {x.Name}, {x.street}:{x.houseNumber} {x.postalCode}
+              </p>
+              <p>phone: {x.telephone}</p>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
