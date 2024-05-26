@@ -1,10 +1,16 @@
+"use client"
+
 import addresses from "../../../public/addresses.json"
 
 export default function header() {
+  const ascending = addresses.addresses.sort((a, b) =>
+    a.Name > b.Name ? 1 : -1
+  )
+
   return (
     <div>
-      <ul>
-        {addresses.addresses.map((x) => {
+      <ol>
+        {ascending.map((x) => {
           return (
             <li key={x.id} className="border m-1 p-1">
               <p>
@@ -14,7 +20,7 @@ export default function header() {
             </li>
           )
         })}
-      </ul>
+      </ol>
     </div>
   )
 }
