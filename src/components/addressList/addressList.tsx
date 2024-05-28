@@ -1,22 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import addresses from "../../../public/addresses.json";
 
 export default function AddressList() {
-  const ascending = addresses.addresses.sort((a, b) =>
-    a.Name.charCodeAt(0) > b.Name.charCodeAt(0) ? 1 : -1
+  const ascending = useMemo(
+    () => [...addresses.addresses].sort((a, b) => a.Name.localeCompare(b.Name)),
+    [addresses]
   );
-  const descending = addresses.addresses.sort((a, b) =>
-    a.Name.charCodeAt(0) > b.Name.charCodeAt(0) ? -1 : 1
+  const descending = useMemo(
+    () => [...addresses.addresses].sort((a, b) => b.Name.localeCompare(a.Name)),
+    [addresses]
   );
 
   const [order, setOrder] = useState(ascending);
-  console.log(order);
 
   return (
     <div>
-      <button onClick={() => setOrder(descending)}>reorder</button>
+      <button
+        onClick={() => setOrder(order == ascending ? descending : ascending)}
+      >
+        reorder
+      </button>
       <ol>
         {order.map((x) => {
           return (
