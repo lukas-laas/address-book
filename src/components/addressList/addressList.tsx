@@ -1,16 +1,24 @@
-"use client"
+"use client";
 
-import addresses from "../../../public/addresses.json"
+import { useState } from "react";
+import addresses from "../../../public/addresses.json";
 
-export default function header() {
+export default function AddressList() {
   const ascending = addresses.addresses.sort((a, b) =>
-    a.Name > b.Name ? 1 : -1
-  )
+    a.Name.charCodeAt(0) > b.Name.charCodeAt(0) ? 1 : -1
+  );
+  const descending = addresses.addresses.sort((a, b) =>
+    a.Name.charCodeAt(0) > b.Name.charCodeAt(0) ? -1 : 1
+  );
+
+  const [order, setOrder] = useState(ascending);
+  console.log(order);
 
   return (
     <div>
+      <button onClick={() => setOrder(descending)}>reorder</button>
       <ol>
-        {ascending.map((x) => {
+        {order.map((x) => {
           return (
             <li key={x.id} className="border m-1 p-1">
               <p>
@@ -18,9 +26,9 @@ export default function header() {
               </p>
               <p>phone: {x.telephone}</p>
             </li>
-          )
+          );
         })}
       </ol>
     </div>
-  )
+  );
 }
