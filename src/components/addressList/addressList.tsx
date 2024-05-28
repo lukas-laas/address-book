@@ -25,7 +25,7 @@ export default function AddressList({
           className="border px-2 py-1 rounded-md bg-green-900"
           onClick={() => setOrder(order == ascending ? descending : ascending)}
         >
-          Reordername
+          Reorder
         </button>
         <input type="text" placeholder="Search" className="rounded-md border" />
       </div>
