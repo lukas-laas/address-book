@@ -1,9 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import addresses from "../../../public/addresses.json";
 
-export default function AddressList() {
+export default function AddressList({
+  addresses,
+}: {
+  addresses: Record<string, any>;
+}) {
   const ascending = useMemo(
     () => [...addresses.addresses].sort((a, b) => a.Name.localeCompare(b.Name)),
     [addresses]
