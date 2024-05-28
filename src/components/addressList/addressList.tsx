@@ -19,13 +19,16 @@ export default function AddressList({
   const [order, setOrder] = useState(ascending);
 
   return (
-    <div>
-      <button
-        className="border px-2 py-1 rounded-md bg-green-900"
-        onClick={() => setOrder(order == ascending ? descending : ascending)}
-      >
-        Reorder
-      </button>
+    <>
+      <div className="flex flex-row gap-1">
+        <button
+          className="border px-2 py-1 rounded-md bg-green-900"
+          onClick={() => setOrder(order == ascending ? descending : ascending)}
+        >
+          Reordername
+        </button>
+        <input type="text" placeholder="Search" className="rounded-md border" />
+      </div>
       <ol>
         {order.map((x) => {
           return (
@@ -38,6 +41,6 @@ export default function AddressList({
           );
         })}
       </ol>
-    </div>
+    </>
   );
 }
