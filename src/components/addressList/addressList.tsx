@@ -21,14 +21,15 @@ export default function AddressList({
   return (
     <div>
       <button
+        className="border px-2 py-1 rounded-md bg-green-900"
         onClick={() => setOrder(order == ascending ? descending : ascending)}
       >
-        reorder
+        Reorder
       </button>
       <ol>
         {order.map((x) => {
           return (
-            <li key={x.id} className="border m-1 p-1">
+            <li key={x.id} className="border p-1 rounded-md bg-gray-800 my-1">
               <p>
                 {x.Name}, {x.street}:{x.houseNumber} {x.postalCode}
               </p>
