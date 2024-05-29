@@ -18,9 +18,10 @@
     },
     {
       "id": 3,
-      "Name": "Kaj Eklööf",
-      "street": "Östra Ågatan",
-      "houseNumber": "11",
+      "Name": "Karlsson På taket",
+      "street": "Öland",
+      "houseNumber": 11,
+      "postalCode": 12345,
       "telephone": 1231231212
     }
   ]
