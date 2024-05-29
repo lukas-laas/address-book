@@ -17,7 +17,7 @@ export default function AddressList({
     [addresses]
   );
 
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [order, setOrder] = useState(ascending);
 
   function search() {
