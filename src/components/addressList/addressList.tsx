@@ -41,9 +41,9 @@ export default function AddressList({
 
   return (
     <>
-      <div className="flex w-full justify-between">
+      <div className="flex w-full justify-between gap-1">
         <button
-          className="border px-2 py-1 rounded-md bg-green-900"
+          className="border px-2 py-1 rounded-md bg-green-600 border-green-900"
           onClick={() => setOrder(order == ascending ? descending : ascending)}
         >
           Reorder
@@ -52,7 +52,7 @@ export default function AddressList({
           ref={inputRef}
           type="text"
           placeholder="Search"
-          className="rounded-md border text-black"
+          className="rounded-md border text-black px-1 min-w-4"
           onChange={() => search()}
         />
       </div>
@@ -61,11 +61,11 @@ export default function AddressList({
           return (
             <li
               key={x.id}
-              className="flex flex-row border p-1 rounded-md bg-gray-800 my-1"
+              className="flex flex-row p-2 rounded-md bg-gray-800 my-1"
             >
               <div>
                 <p>
-                  {x.Name}, {x.street}:{x.houseNumber} {x.postalCode}
+                  {x.Name}, {x.street}: {x.houseNumber}, {x.postalCode}
                 </p>
                 <p>phone: {x.telephone}</p>
               </div>
