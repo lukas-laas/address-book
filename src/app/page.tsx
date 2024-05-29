@@ -11,7 +11,7 @@ export default async function Home() {
   const _addresses = await getAddresses();
   console.log(_addresses);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-24">
+    <main className="flex min-h-screen flex-col items-center justify-start p-12 w-full">
       <Header />
       <AddressList addresses={_addresses} />
     </main>

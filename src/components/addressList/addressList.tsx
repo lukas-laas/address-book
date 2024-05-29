@@ -20,16 +20,21 @@ export default function AddressList({
 
   return (
     <>
-      <div className="flex flex-row gap-1">
+      <div className="flex w-full justify-between">
         <button
           className="border px-2 py-1 rounded-md bg-green-900"
           onClick={() => setOrder(order == ascending ? descending : ascending)}
         >
           Reorder
         </button>
-        <input type="text" placeholder="Search" className="rounded-md border" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="rounded-md border"
+          onChange={order.find((element) => order.includes(element))}
+        />
       </div>
-      <ol>
+      <ol className="w-full">
         {order.map((x) => {
           return (
             <li key={x.id} className="border p-1 rounded-md bg-gray-800 my-1">
