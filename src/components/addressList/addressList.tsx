@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
 import { useMemo, useRef, useState } from "react";
 
 export default function AddressList({
@@ -46,7 +47,7 @@ export default function AddressList({
           className="border px-2 py-1 rounded-md bg-green-600 border-green-900"
           onClick={() => setOrder(order == ascending ? descending : ascending)}
         >
-          Reorder
+          {order == ascending ? <ArrowUpward /> : <ArrowDownward />}
         </button>
         <input
           ref={inputRef}
